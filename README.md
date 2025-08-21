@@ -53,8 +53,8 @@ Liste e descreva os bounded contexts identificados no projeto. Explique a respon
 
 | **Bounded Context**           | **Responsabilidade**                                                                        | **Subdomínios Relacionados** |
 |-------------------------------|---------------------------------------------------------------------------------------------|-----------------------------|
-| Ex.: Contexto de Consultas    | Gerencia as consultas médicas, do agendamento à finalização, incluindo emissão de receitas. | Gestão de Consultas         |
-| Ex.: Contexto de Pagamentos   | Processa cobranças de consultas e repasses para médicos ou clínicas.                        | Pagamentos                  |
+| Contexto de Consultas    | Gerencia as consultas médicas, do agendamento à finalização, incluindo emissão de receitas. | Gestão de Consultas         |
+| Contexto de Pagamentos   | Processa cobranças de consultas e repasses para médicos ou clínicas.                        | Pagamentos                  |
 
 ---
 
