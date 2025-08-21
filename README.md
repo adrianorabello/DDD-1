@@ -6,7 +6,7 @@ Identificar os subdomínios do projeto, classificá-los (Core, Supporting, Gener
 ---
 
 ## 1. Nome do Projeto
-**[Magraz – Plataforma Inteligente de Gestão e Personalização de Dietas Saudáveis.]**
+**Magraz – Plataforma Inteligente de Gestão e Personalização de Dietas Saudáveis.**
 
 ---
 
