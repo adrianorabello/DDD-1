@@ -1,121 +1,149 @@
-# Dinâmica: Design Estratégico do Projeto
+# 📚 Domain Driven Design - Design Estratégico do Projeto
+---
 
-## Objetivo
-Identificar os subdomínios do projeto, classificá-los (Core, Supporting, Generic) e desenhar os bounded contexts, incluindo suas interações. Esse exercício ajudará a criar uma visão clara e estratégica do domínio.
+## 👥 1. Equipe
+| **RM**   | **Nome**                  |
+|----------|---------------------------|
+| RM362208 | Adriano Rabello           |
+| RM365052 | Francielli manchini tateo |
+| RM364993 | Fábio Ivo Silva           |
+| RM365124 | Renato Magri Trevine      |
 
 ---
 
-## 1. Nome do Projeto
-**Magraz – Plataforma Inteligente de Gestão e Personalização de Dietas Saudáveis.**
+## 🎯 Objetivo
+Identificar os **subdomínios** do projeto, classificá-los como **Core, Supporting ou Generic**, e desenhar os **Bounded Contexts** que delimitam responsabilidades e interações.  
+Este exercício tem como meta construir uma **visão estratégica e de alto nível** do domínio, preparando o terreno para o **Design Tático**.
+
+
+
+## 🏷️ 1. Nome do Projeto
+**Magraz — Plataforma Inteligente de Gestão e Personalização de Dietas Saudáveis**
 
 ---
 
-## 2. Objetivo Principal do Projeto
-Desenvolver uma plataforma digital que conecte nutricionistas, fornecedores de refeições saudáveis e clientes finais, oferecendo planos nutricionais personalizados e acompanhamento em tempo real, com o objetivo de promover hábitos alimentares saudáveis, reduzir tempo de planejamento e aumentar a adesão às dietas..
-### **Fase 1 – Conexão e Gestão de Planos Nutricionais**
-Criar uma plataforma que conecte **nutricionistas**, **fornecedores de refeições saudáveis** e **clientes finais**, possibilitando a **criação e gestão de planos nutricionais personalizados**, com acompanhamento básico de progresso.  
-Foco inicial: disponibilizar uma solução funcional que reduza o tempo de planejamento e facilite a comunicação entre os envolvidos.
+## 💡 2. Objetivo Principal do Projeto
 
-### **Fase 2 – Inteligência e Otimização em Tempo Real**
-Evoluir a plataforma para oferecer **acompanhamento em tempo real**, com recomendações automáticas e ajustes inteligentes nos planos com base em métricas e preferências do cliente.  
-Foco: **promover hábitos alimentares saudáveis**, aumentar a adesão às dietas e otimizar a experiência do usuário.
-
+Desenvolver uma **plataforma digital integrada** que conecte **nutricionistas**, **fornecedores de refeições saudáveis** e **clientes finais**, permitindo a criação de **planos nutricionais personalizados** e o acompanhamento contínuo do progresso.  
+O sistema busca **promover hábitos alimentares saudáveis**, **reduzir o tempo de planejamento** e **aumentar a adesão às dietas** por meio de automação e inteligência de dados.
 
 ---
 
-## 3. Identificação dos Subdomínios
-Liste os subdomínios do sistema e classifique-os como **Core Domain**, **Supporting Subdomain** ou **Generic Subdomain**.
+### 🚀 Fase 1 — Conexão e Gestão de Planos Nutricionais
+Implantar a base da plataforma, permitindo que nutricionistas criem e gerenciem **planos personalizados**, integrando-se com fornecedores de refeições.
+> 🎯 **Foco:** funcionalidade central e comunicação eficiente entre todos os participantes.
 
-| **Subdomínio**                                           | **Descrição**                                       | **Tipo**                |
-|----------------------------------------------------------|-----------------------------------------------------|-------------------------|
-| Gestão de Planos Nutricionais                            | Criação, personalização e acompanhamento de dietas  | Core Domain             |                                                          |                                                     |                         |
-| Cadastro e Perfil de Usuário                             | Clientes, nutricionistas, fornecedores              | Subdomínios de Suporte  |
-| Catálogo de Refeições                                    | Cardápios, ingredientes, valores nutricionais       | Subdomínios de Suporte  |
-| Agendamento e Entrega                                    | Integração com logística)                           | Subdomínios de Suporte  |                                                          |                                                     |                         |
-| Autenticação e Autorização                               | Login, permissões, segurança                        | Subdomínios Genéricos   |
-| Pagamento e Faturamento                                  | Integração com gateways de pagamento                | Subdomínios Genéricos   |
-| Notificações                                             | e-mail, push, SMS                                   | Subdomínios Genéricos   |
-
-
-| Categoria                           | Subdomínio                           | Descrição                                                                                                                                                  |
-|-------------------------------------|--------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Domínio Principal (Core Domain)** | Gestão de Planos Nutricionais        | Criação, personalização e acompanhamento de dietas. Inclui análise de progresso do cliente e ajustes automáticos baseados em métricas e preferências.      |
-| **Subdomínios de Suporte**          | Cadastro e Perfil de Usuário         | Gerenciamento de dados de clientes, nutricionistas e fornecedores.                                                                                         |
-|                                     | Catálogo de Refeições                | Registro de cardápios, ingredientes e valores nutricionais.                                                                                                |
-|                                     | Agendamento e Entrega                | Integração com serviços de logística para entrega de refeições.                                                                                            |
-| **Subdomínios Genéricos**           | Autenticação e Autorização           | Controle de login, permissões e segurança do sistema.                                                                                                      |
-|                                     | Pagamento e Faturamento              | Integração com gateways de pagamento e gestão financeira.                                                                                                  |
-|                                     | Notificações                         | Envio de alertas e mensagens via e-mail, push e SMS.                                                                                                       |
----
-
-## 4. Desenho dos Bounded Contexts
-Liste e descreva os bounded contexts identificados no projeto. Explique a responsabilidade de cada um.
-
-| **Bounded Context**           | **Responsabilidade**                                                                        | **Subdomínios Relacionados** |
-|-------------------------------|---------------------------------------------------------------------------------------------|-----------------------------|
-| Contexto de Consultas    | Gerencia as consultas médicas, do agendamento à finalização, incluindo emissão de receitas. | Gestão de Consultas         |
-| Contexto de Pagamentos   | Processa cobranças de consultas e repasses para médicos ou clínicas.                        | Pagamentos                  |
+### 🧠 Fase 2 — Inteligência e Otimização em Tempo Real
+Evoluir para um sistema **inteligente e adaptativo**, que recomenda e ajusta automaticamente os planos com base nas **métricas de saúde e preferências do cliente**.
+> 🎯 **Foco:** automação, engajamento e otimização contínua.
 
 ---
 
-## 5. Comunicação entre os Bounded Contexts
-Para manter consistência na comunicação entre negócio e tecnologia, definimos alguns termos:
-- **Mensageria/Eventos (desacoplado):** Ex.: O Contexto de Consultas emite um evento "Consulta Finalizada", consumido pelo Contexto de Pagamentos.
-- **APIs (síncrono):** Ex.: O Contexto de Pagamentos consulta informações de preços no Contexto de Consultas.
+## 🧩 3. Identificação e Classificação dos Subdomínios
 
-| **De (Origem)**           | **Para (Destino)**          | **Forma de Comunicação**    | **Exemplo de Evento/Chamada**                  |
-|---------------------------|-----------------------------|-----------------------------|-----------------------------------------------|
-| Plano Nutricional         | Contexto de Pagamentos      | Mensageria (Evento)         | "Consulta Finalizada"                         |
-| Contexto de Cadastro      | Contexto de Consultas      | API                         | Obter informações de um Paciente pelo ID      |
-
----
-
-## 6. Definição da Linguagem Ubíqua
-Liste os termos principais da Linguagem Ubíqua do projeto. Explique brevemente cada termo.
-
-| **Termo**         | **Descrição**                                                       |
-|-------------------|---------------------------------------------------------------------|
-| Plano Nutricional | Conjunto de refeições e orientações adaptadas ao perfil do cliente  |
-| Fornecedor        | Pessoa ou empresa que produz e entrega refeições.                   |
-| Nutricionista     | Profissional que prescreve e ajusta o plano nutricional.            |
-| Cliente           | Pessoa que recebe e segue o plano nutricional.                      |
-| Refeição          | Preparação alimentar cadastrada no sistema com dados nutricionais.  |
-| Entregador        | Responsável por levar a refeição ao cliente.                        |
-| Dashboard         | Painel de acompanhamento do progresso do cliente.                   |
+| **Subdomínio**                    | **Descrição**                                                        | **Tipo**              |
+|----------------------------------|---------------------------------------------------------------------|-----------------------|
+| **Gestão de Planos Nutricionais** | Criação, personalização e acompanhamento de dietas e metas.         | 🟢 **Core Domain** |
+| **Cadastro e Perfil de Usuário**  | Gerencia dados de clientes, nutricionistas e fornecedores.          | 🟡 **Supporting** |
+| **Catálogo de Refeições**         | Mantém cardápios, ingredientes e valores nutricionais.              | 🟡 **Supporting** |
+| **Agendamento e Entrega**         | Integração logística para entrega de refeições ao cliente.          | 🟡 **Supporting** |
+| **Autenticação e Autorização**    | Controle de login, permissões e segurança.                          | ⚪ **Generic** |
+| **Pagamentos e Faturamento**      | Integração com gateways de pagamento e gestão financeira.           | ⚪ **Generic** |
+| **Notificações**                  | Envio de e-mails, push e SMS para interação e engajamento.          | ⚪ **Generic** |
 
 ---
 
-## 7. Estratégia de Desenvolvimento
-Para cada tipo de subdomínio, explique a abordagem para implementação:
-- **Core Domain:** Desenvolver internamente com foco total.
-- **Supporting Subdomain:** Desenvolver internamente ou parcialmente terceirizar.
-- **Generic Subdomain:** Usar ferramentas ou serviços de mercado.
+## 🧭 4. Desenho dos Bounded Contexts
 
-| **Subdomínio**                  | **Estratégia**                   | **Ferramentas ou Serviços (se aplicável)**                                                                                                                                                                                  |
-|---------------------------------|----------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Gestão de Planos Nutricionais   | Desenvolvimento interno          | Microservices para escalabilidade e independência de cada contexto delimitado.<br/>Comunicação assíncrona entre serviços usando mensageria (Kafka ou RabbitMQ).<br/>API Gateway para centralizar autenticação e roteamento. |
-| Cadastro de Usuários            | Interno com uso de Auth0, Oauth2 | Auth0, Oauth2                                                                                                                                                                                                               |
-| Pagamentos                      | Terceirizar usando API           | Api de pagamentos                                                                                                                                                                                                           |
-| Entregador                      | Integração com API de terceiros  | Uber, Entrega fácil                                                                                                                                                                                                         |    
-
+| **Bounded Context** | **Responsabilidade** | **Subdomínios Relacionados** |
+|----------------------|----------------------|-------------------------------|
+| **Gestão de Planos Nutricionais** | Core Domain: Criação, atualização e acompanhamento de planos personalizados. | Gestão de Planos Nutricionais |
+| **Cadastro e Perfil de Usuário** | Armazena e mantém informações sobre clientes, nutricionistas e fornecedores. | Cadastro e Perfil |
+| **Catálogo de Refeições** | Disponibiliza dados nutricionais de refeições e ingredientes. | Catálogo |
+| **Agendamento e Entrega** | Integra a logística de entrega das refeições. | Entregas |
+| **Pagamentos e Faturamento** | Processa pagamentos e repasses financeiros. | Pagamentos |
+| **Autenticação e Autorização** | Gerencia logins e permissões. | Autenticação |
+| **Notificações** | Envia alertas de progresso, lembretes e confirmações. | Notificações |
 
 ---
 
-## 8. Diagrama Visual (Opcional, mas Recomendado)
-Desenhe um diagrama que mostre:
-- Os bounded contexts.
-- Como eles se comunicam.
-- A relação com os subdomínios.
+## 🔄 5. Comunicação entre os Bounded Contexts
 
-Use ferramentas como **Miro**, **Lucidchart** ou mesmo papel e caneta para criar seu diagrama e adicionar ao projeto.
+A interação entre os contextos segue dois padrões principais:
+
+- **Mensageria (Assíncrono):** Comunicação desacoplada por meio de eventos de domínio.  
+  Exemplo: O contexto de **Gestão de Planos Nutricionais** emite um evento `PlanoNutricionalFinalizado`, consumido por **Notificações** e **Pagamentos**.
+
+- **APIs (Síncrono):** Comunicação direta via REST/GraphQL para operações que exigem resposta imediata.  
+  Exemplo: O **Catálogo de Refeições** fornece dados nutricionais ao contexto de **Gestão de Planos**.
+
+| **Origem (De)** | **Destino (Para)** | **Forma de Comunicação** | **Exemplo de Interação** |
+|-----------------|--------------------|---------------------------|---------------------------|
+| Gestão de Planos Nutricionais | Notificações | Evento (Assíncrono) | `PlanoNutricionalCriado` → gera notificação de boas-vindas. |
+| Gestão de Planos Nutricionais | Pagamentos | Evento (Assíncrono) | `PlanoNutricionalFinalizado` → aciona cobrança automática. |
+| Catálogo de Refeições | Gestão de Planos Nutricionais | API (Síncrono) | Consulta nutricional de ingredientes e refeições. |
+| Cadastro e Perfil de Usuário | Gestão de Planos Nutricionais | API (Síncrono) | Obtenção de dados do paciente e nutricionista. |
 
 ---
 
-## Dicas para Apresentação
-- Explique cada parte do design, focando no **Core Domain** (o coração do negócio).
-- Justifique por que certos subdomínios foram classificados como Supporting ou Generic.
-- Destaque como a comunicação entre bounded contexts foi pensada para ser escalável.
+## 🗣️ 6. Definição da Linguagem Ubíqua
+
+| **Termo** | **Descrição** |
+|------------|---------------|
+| **Plano Nutricional** | Conjunto de refeições e metas ajustadas ao perfil do cliente. |
+| **Refeição** | Preparação alimentar cadastrada com seus valores nutricionais. |
+| **Meta Nutricional** | Objetivo calórico e nutricional determinado pelo nutricionista. |
+| **Nutricionista** | Profissional responsável pela criação e acompanhamento do plano. |
+| **Cliente (Paciente)** | Usuário que segue o plano e registra seu progresso. |
+| **Fornecedor** | Parceiro que fornece refeições ou ingredientes. |
+| **Entregador** | Responsável pela logística de entrega das refeições. |
+| **Dashboard** | Painel que exibe métricas, progresso e recomendações. |
+
+> A **linguagem ubíqua** garante que termos técnicos e de negócio sejam consistentes entre equipes de desenvolvimento, nutricionistas e gestores.
 
 ---
 
-Boa sorte com a dinâmica! 🚀
+## 🧱 7. Estratégia de Desenvolvimento por Tipo de Subdomínio
+
+| **Subdomínio** | **Abordagem de Implementação** | **Ferramentas / Tecnologias** |
+|----------------|--------------------------------|--------------------------------|
+| **Gestão de Planos Nutricionais (Core)** | Desenvolvimento interno com foco total. | Spring Boot, Kotlin/Java, RabbitMQ/Kafka, PostgreSQL. |
+| **Cadastro e Perfil de Usuário (Supporting)** | Interno com possíveis integrações externas. | Keycloak, Auth0, PostgreSQL. |
+| **Catálogo de Refeições (Supporting)** | Interno com opção de integração futura a APIs públicas. | REST API, MongoDB, NutriData API. |
+| **Agendamento e Entrega (Supporting)** | Integração com sistemas de terceiros (logística). | Uber Eats API, Entrega Fácil API. |
+| **Pagamentos e Faturamento (Generic)** | Terceirizado via APIs externas. | Stripe, Pagar.me, Mercado Pago. |
+| **Autenticação e Autorização (Generic)** | Uso de soluções prontas de identidade. | Auth0, Keycloak, OAuth2. |
+| **Notificações (Generic)** | Integrado via mensageria ou serviços externos. | Firebase, Twilio, AWS SNS. |
+
+---
+
+## 🧭 8. Diagrama de Contextos (Exemplo)
+
+> O diagrama abaixo representa os **Bounded Contexts** e suas **relações** com base nos padrões de integração do DDD (Customer-Supplier, Shared Kernel, etc.).
+
+```mermaid
+flowchart LR
+  subgraph Core["Core Domain"]
+    A["Gestão de Planos Nutricionais"]
+  end
+
+  subgraph Support["Subdomínios de Suporte"]
+    B["Cadastro e Perfil de Usuário"]
+    C["Catálogo de Refeições"]
+    D["Agendamento e Entrega"]
+  end
+
+  subgraph Generic["Subdomínios Genéricos"]
+    E["Autenticação e Autorização"]
+    F["Pagamentos e Faturamento"]
+    G["Notificações"]
+  end
+
+  A -->|Shared Kernel| B
+  A -->|Customer-Supplier| C
+  A -->|Customer-Supplier| D
+  A -->|Anticorruption Layer| F
+  A -->|Conformist| G
+  E --> A
+```
+![Diagrama de Contextos](./diagrama-contexto.png)
