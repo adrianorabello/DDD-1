@@ -1,7 +1,7 @@
-# 📚 Domain Driven Design - Design Estratégico do Projeto
+📚 Domain Driven Design - Design Estratégico do Projeto
 ---
 
-## 👥 1. Equipe
+# 👥 1. Equipe
 | **RM**   | **Nome**                  |
 |----------|---------------------------|
 | RM362208 | Adriano Rabello           |
